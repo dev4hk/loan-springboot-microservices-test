@@ -1,4 +1,4 @@
-@Application
+@Application @Customer
 Feature: Application
 
   Background:

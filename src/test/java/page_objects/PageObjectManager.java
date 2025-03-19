@@ -5,6 +5,8 @@ import page_objects.authentication.LoginPage;
 import page_objects.authentication.RegisterPage;
 import page_objects.customer.*;
 import page_objects.customer.CustomerApplicationPage;
+import page_objects.manager.ManagerApplicationDetailPage;
+import page_objects.manager.ManagerApplicationPage;
 import page_objects.manager.ManagerSummaryPage;
 import page_objects.manager.ManagerTermsPage;
 
@@ -18,6 +20,8 @@ public class PageObjectManager {
     private CustomerRepaymentPage customerRepaymentPage;
     private ManagerSummaryPage managerSummaryPage;
     private ManagerTermsPage managerTermsPage;
+    private ManagerApplicationPage managerApplicationPage;
+    private ManagerApplicationDetailPage managerApplicationDetailPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -77,5 +81,19 @@ public class PageObjectManager {
             this.managerTermsPage = new ManagerTermsPage(this.driver);
         }
         return this.managerTermsPage;
+    }
+
+    public ManagerApplicationPage getManagerApplicationPage() {
+        if(this.managerApplicationPage == null) {
+            this.managerApplicationPage = new ManagerApplicationPage(this.driver);
+        }
+        return this.managerApplicationPage;
+    }
+
+    public ManagerApplicationDetailPage getManagerApplicationDetailPage() {
+        if(this.managerApplicationDetailPage == null) {
+            this.managerApplicationDetailPage = new ManagerApplicationDetailPage(this.driver);
+        }
+        return this.managerApplicationDetailPage;
     }
 }

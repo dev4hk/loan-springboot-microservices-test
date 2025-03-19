@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features",
         glue = "step_definitions",
         monochrome = true,
-        tags = "@Application"
+        tags = "@Application and @Manager"
 )
 public class TestNGRunner extends AbstractTestNGCucumberTests {
 }

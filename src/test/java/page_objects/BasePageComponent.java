@@ -54,5 +54,7 @@ public class BasePageComponent {
         this.termsLink.click();
     }
 
-
+    public void goToManagerApplicationPage() {
+        this.applicationLink.click();
+    }
 }

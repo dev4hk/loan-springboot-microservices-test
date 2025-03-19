@@ -7,6 +7,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import page_objects.customer.CustomerApplicationPage;
 import page_objects.customer.CustomerSummaryPage;
+import page_objects.manager.ManagerApplicationDetailPage;
+import page_objects.manager.ManagerApplicationPage;
+import page_objects.manager.ManagerSummaryPage;
 import utils.TestContext;
 
 import java.util.List;
@@ -16,6 +19,9 @@ public class ApplicationStepDefinitions {
     TestContext testContext;
     CustomerSummaryPage customerSummaryPage;
     CustomerApplicationPage customerApplicationPage;
+    ManagerSummaryPage managerSummaryPage;
+    ManagerApplicationPage managerApplicationPage;
+    ManagerApplicationDetailPage managerApplicationDetailPage;
 
     public ApplicationStepDefinitions(TestContext testContext) {
         this.testContext = testContext;
@@ -78,5 +84,43 @@ public class ApplicationStepDefinitions {
         Assert.assertTrue(this.customerApplicationPage.isFaqAnswerDisplayed());
     }
 
+    @Then("number of applications is not zero")
+    public void number_of_applications_is_not_zero() {
+        this.managerSummaryPage = this.testContext.getPageObjectManager().getManagerSummaryPage();
+        Assert.assertTrue(this.managerSummaryPage.countApplication() != 0);
+    }
+
+    @Given("manager is on application page")
+    public void manager_is_on_application_page() {
+        this.managerSummaryPage = this.testContext.getPageObjectManager().getManagerSummaryPage();
+        this.managerSummaryPage.goToManagerApplicationPage();
+        this.managerApplicationPage = this.testContext.getPageObjectManager().getManagerApplicationPage();
+    }
+
+    @When("application data table is displayed")
+    public void application_data_table_is_displayed() {
+        Assert.assertTrue(this.managerApplicationPage.isDataTableDisplayed());
+    }
+
+    @Then("application count in table is not zero")
+    public void application_count_in_table_is_not_zero() {
+        Assert.assertTrue(this.managerApplicationPage.getApplicationCount() != 0);
+    }
+
+    @Then("application from customer email {string} exists")
+    public void application_from_customer_email_exists(String email) {
+        Assert.assertTrue(this.managerApplicationPage.dataExists(email));
+    }
+
+    @When("manager clicks on details button of application by customer with email {string}")
+    public void manager_clicks_on_details_button_of_application_by_customer_with_email(String email) {
+        this.managerApplicationPage.clickDetail(email);
+    }
+
+    @Then("manager is routed to application detail page by customer with email {string}")
+    public void manager_is_routed_to_application_detail_page_by_customer_with_email(String email) {
+        this.managerApplicationDetailPage = this.testContext.getPageObjectManager().getManagerApplicationDetailPage();
+        Assert.assertTrue(this.managerApplicationDetailPage.isApplicationBy(email));
+    }
 
 }
