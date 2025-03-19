@@ -1,11 +1,12 @@
-package page_objects.customer;
+package page_objects.authentication;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import page_objects.BasePageComponent;
 
-public class CustomerRegisterPage extends CustomerBasePageComponent {
+public class RegisterPage extends BasePageComponent {
 
     @FindBy(id = "kc-header-wrapper")
     WebElement pageTitle;
@@ -37,7 +38,7 @@ public class CustomerRegisterPage extends CustomerBasePageComponent {
     @FindBy(partialLinkText = "Back to Login")
     WebElement backToLoginLink;
 
-    public CustomerRegisterPage(WebDriver driver) {
+    public RegisterPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }

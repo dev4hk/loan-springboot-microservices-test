@@ -1,33 +1,39 @@
 package page_objects;
 
 import org.openqa.selenium.WebDriver;
+import page_objects.authentication.LoginPage;
+import page_objects.authentication.RegisterPage;
 import page_objects.customer.*;
+import page_objects.manager.ManagerSummaryPage;
+import page_objects.manager.ManagerTermsPage;
 
 public class PageObjectManager {
     private WebDriver driver;
-    private CustomerLoginPage customerLoginPage;
-    private CustomerRegisterPage customerRegistrationPage;
+    private LoginPage loginPage;
+    private RegisterPage registrationPage;
     private CustomerSummaryPage customerSummaryPage;
-    private CustomerApplicationPage customerApplicationPage;
+    private ApplicationPage customerApplicationPage;
     private CustomerCounselPage customerCounselPage;
     private CustomerRepaymentPage customerRepaymentPage;
+    private ManagerSummaryPage managerSummaryPage;
+    private ManagerTermsPage managerTermsPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public CustomerLoginPage getCustomerLoginPage() {
-        if (this.customerLoginPage == null) {
-            this.customerLoginPage = new CustomerLoginPage(this.driver);
+    public LoginPage getCustomerLoginPage() {
+        if (this.loginPage == null) {
+            this.loginPage = new LoginPage(this.driver);
         }
-        return this.customerLoginPage;
+        return this.loginPage;
     }
 
-    public CustomerRegisterPage getCustomerRegistrationPage() {
-        if (this.customerRegistrationPage == null) {
-            this.customerRegistrationPage = new CustomerRegisterPage(this.driver);
+    public RegisterPage getRegistrationPage() {
+        if (this.registrationPage == null) {
+            this.registrationPage = new RegisterPage(this.driver);
         }
-        return this.customerRegistrationPage;
+        return this.registrationPage;
     }
 
     public CustomerSummaryPage getCustomerSummaryPage() {
@@ -37,9 +43,9 @@ public class PageObjectManager {
         return this.customerSummaryPage;
     }
 
-    public CustomerApplicationPage getCustomerApplicationPage() {
+    public ApplicationPage getCustomerApplicationPage() {
         if(this.customerApplicationPage == null) {
-            this.customerApplicationPage = new CustomerApplicationPage(this.driver);
+            this.customerApplicationPage = new ApplicationPage(this.driver);
         }
         return this.customerApplicationPage;
     }
@@ -56,5 +62,19 @@ public class PageObjectManager {
             this.customerRepaymentPage = new CustomerRepaymentPage(this.driver);
         }
         return this.customerRepaymentPage;
+    }
+
+    public ManagerSummaryPage getManagerSummaryPage() {
+        if(this.managerSummaryPage == null) {
+            this.managerSummaryPage = new ManagerSummaryPage(this.driver);
+        }
+        return this.managerSummaryPage;
+    }
+
+    public ManagerTermsPage getManagerTermsPage() {
+        if(this.managerTermsPage == null) {
+            this.managerTermsPage = new ManagerTermsPage(this.driver);
+        }
+        return this.managerTermsPage;
     }
 }

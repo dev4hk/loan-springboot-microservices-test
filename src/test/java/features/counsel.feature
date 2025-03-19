@@ -1,6 +1,6 @@
 Feature: Counsel
   Background:
-    Given customer is on login page
+    Given user is on login page
     When customer types customer credentials and click on sign in button
     Then customer is routed to customer summary page
 

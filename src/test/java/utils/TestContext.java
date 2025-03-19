@@ -26,11 +26,16 @@ public class TestContext {
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/global.properties");
         Properties props = new Properties();
         props.load(fis);
-        credentials.put("username", props.getProperty("username"));
-        credentials.put("password", props.getProperty("password"));
-        credentials.put("email", props.getProperty("email"));
-        credentials.put("firstname", props.getProperty("firstname"));
-        credentials.put("lastname", props.getProperty("lastname"));
+        credentials.put("customer_username", props.getProperty("customer_username"));
+        credentials.put("customer_password", props.getProperty("customer_password"));
+        credentials.put("customer_email", props.getProperty("customer_email"));
+        credentials.put("customer_firstname", props.getProperty("customer_firstname"));
+        credentials.put("customer_lastname", props.getProperty("customer_lastname"));
+        credentials.put("manager_username", props.getProperty("manager_username"));
+        credentials.put("manager_password", props.getProperty("manager_password"));
+        credentials.put("manager_email", props.getProperty("manager_email"));
+        credentials.put("manager_firstname", props.getProperty("manager_firstname"));
+        credentials.put("manager_lastname", props.getProperty("manager_lastname"));
         fis.close();
     }
 

@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import page_objects.BasePageComponent;
 
-public class CustomerSummaryPage extends BasePageComponent {
-    public CustomerSummaryPage(WebDriver driver) {
+public class ApplicationPage extends BasePageComponent {
+    public ApplicationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }

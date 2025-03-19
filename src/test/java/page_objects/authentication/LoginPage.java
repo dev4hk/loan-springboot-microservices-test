@@ -1,11 +1,12 @@
-package page_objects.customer;
+package page_objects.authentication;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import page_objects.BasePageComponent;
 
-public class CustomerLoginPage extends CustomerBasePageComponent {
+public class LoginPage extends BasePageComponent {
 
     @FindBy(id = "kc-header-wrapper")
     WebElement pageTitle;
@@ -25,7 +26,7 @@ public class CustomerLoginPage extends CustomerBasePageComponent {
     @FindBy(linkText = "Register")
     WebElement registerLink;
 
-    public CustomerLoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }

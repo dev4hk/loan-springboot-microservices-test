@@ -1,17 +1,21 @@
-package page_objects.customer;
+package page_objects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import page_objects.customer.ApplicationPage;
+import page_objects.customer.CustomerCounselPage;
+import page_objects.customer.CustomerRepaymentPage;
+import page_objects.customer.CustomerSummaryPage;
 
 import java.time.Duration;
 
-public class CustomerBasePageComponent {
+public class BasePageComponent {
 
-    WebDriver driver;
-    WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
     @FindBy(xpath = "//a[normalize-space()=\"Summary\"]")
     WebElement customerSummaryLink;
@@ -25,30 +29,33 @@ public class CustomerBasePageComponent {
     @FindBy(xpath = "//a[normalize-space()=\"Repayment\"]")
     WebElement repaymentLink;
 
-    public CustomerBasePageComponent(WebDriver driver) {
+    @FindBy(xpath = "//a[normalize-space()=\"Terms\"]")
+    WebElement termsLink;
+
+    public BasePageComponent(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
         PageFactory.initElements(this.driver, this);
     }
 
-    public CustomerSummaryPage goToSummary() {
+    public void goToCustomerSummary() {
         this.customerSummaryLink.click();
-        return new CustomerSummaryPage(this.driver);
     }
 
-    public CustomerApplicationPage goToApplication() {
+    public void goToCustomerApplication() {
         this.applicationLink.click();
-        return new CustomerApplicationPage(this.driver);
     }
 
-    public CustomerCounselPage goToCounsel() {
+    public void goToCustomerCounsel() {
         this.counselLink.click();
-        return new CustomerCounselPage(this.driver);
     }
 
-    public CustomerRepaymentPage goToRepayment() {
+    public void goToCustomerRepayment() {
         this.repaymentLink.click();
-        return new CustomerRepaymentPage(this.driver);
+    }
+
+    public void goToManagerTerms() {
+        this.termsLink.click();
     }
 
 

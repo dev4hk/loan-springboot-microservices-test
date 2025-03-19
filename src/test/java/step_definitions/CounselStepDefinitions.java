@@ -23,7 +23,7 @@ public class CounselStepDefinitions {
     @Given("customer is on counsel page")
     public void customer_is_on_counsel_page() {
         this.customerSummaryPage = this.testContext.getPageObjectManager().getCustomerSummaryPage();
-        this.customerSummaryPage.goToCounsel();
+        this.customerSummaryPage.goToCustomerCounsel();
         this.customerCounselPage = this.testContext.getPageObjectManager().getCustomerCounselPage();
         Assert.assertTrue(this.customerCounselPage.getUrl().contains("/counsel"));
     }
