@@ -39,8 +39,8 @@ public class CounselStepDefinitions {
         this.customerCounselPage.setMemoInput(data.get(6));
     }
 
-    @When("customer clicks on Submit button")
-    public void customer_clicks_on_Submit_Button() throws InterruptedException {
+    @When("customer clicks on counsel Submit button")
+    public void customer_clicks_on_counsel_Submit_Button() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) this.testContext.getTestBase().getDriver();
         js.executeScript("window.scrollBy(0, 500)");
         Thread.sleep(500);
@@ -62,12 +62,12 @@ public class CounselStepDefinitions {
         Assert.assertTrue(this.customerCounselPage.isMemoDisplayed());
     }
 
-    @When("FAQ question is clicked")
-    public void faq_question_is_clicked() {
+    @When("counsel FAQ question is clicked")
+    public void counsel_faq_question_is_clicked() {
         this.customerCounselPage.openFaqQuestion();
     }
 
-    @Then("FAQ answer is displayed")
+    @Then("counsel FAQ answer is displayed")
     public void faq_answer_is_displayed() {
         Assert.assertTrue(this.customerCounselPage.isFaqAnswerDisplayed());
     }

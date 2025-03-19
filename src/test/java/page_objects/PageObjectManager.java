@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import page_objects.authentication.LoginPage;
 import page_objects.authentication.RegisterPage;
 import page_objects.customer.*;
+import page_objects.customer.CustomerApplicationPage;
 import page_objects.manager.ManagerSummaryPage;
 import page_objects.manager.ManagerTermsPage;
 
@@ -12,7 +13,7 @@ public class PageObjectManager {
     private LoginPage loginPage;
     private RegisterPage registrationPage;
     private CustomerSummaryPage customerSummaryPage;
-    private ApplicationPage customerApplicationPage;
+    private CustomerApplicationPage customerApplicationPage;
     private CustomerCounselPage customerCounselPage;
     private CustomerRepaymentPage customerRepaymentPage;
     private ManagerSummaryPage managerSummaryPage;
@@ -43,9 +44,9 @@ public class PageObjectManager {
         return this.customerSummaryPage;
     }
 
-    public ApplicationPage getCustomerApplicationPage() {
+    public CustomerApplicationPage getCustomerApplicationPage() {
         if(this.customerApplicationPage == null) {
-            this.customerApplicationPage = new ApplicationPage(this.driver);
+            this.customerApplicationPage = new CustomerApplicationPage(this.driver);
         }
         return this.customerApplicationPage;
     }

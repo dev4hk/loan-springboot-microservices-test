@@ -15,7 +15,7 @@ Feature: Counsel
       | state      |
       | 11111      |
       | memo       |
-    And customer clicks on Submit button
+    And customer clicks on counsel Submit button
     Then customer sees counsel information
 
   Scenario: Customer views counsel information
@@ -25,8 +25,8 @@ Feature: Counsel
 
   Scenario: Customer views FAQ information
     Given customer is on counsel page
-    When FAQ question is clicked
-    Then FAQ answer is displayed
+    When counsel FAQ question is clicked
+    Then counsel FAQ answer is displayed
 
 
     Scenario: Customer updates counsel form
