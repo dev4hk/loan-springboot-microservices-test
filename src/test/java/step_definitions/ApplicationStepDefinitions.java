@@ -13,6 +13,7 @@ import page_objects.manager.ManagerSummaryPage;
 import utils.TestContext;
 
 import java.util.List;
+import java.util.Map;
 
 public class ApplicationStepDefinitions {
 
@@ -121,6 +122,50 @@ public class ApplicationStepDefinitions {
     public void manager_is_routed_to_application_detail_page_by_customer_with_email(String email) {
         this.managerApplicationDetailPage = this.testContext.getPageObjectManager().getManagerApplicationDetailPage();
         Assert.assertTrue(this.managerApplicationDetailPage.isApplicationBy(email));
+    }
+
+    @When("manager types judgement information")
+    public void manager_types_judgement_information(Map<String, String> data) {
+        this.managerApplicationDetailPage.setJudgementAmount(data.get("Judgement Amount"));
+        this.managerApplicationDetailPage.setStartDate(data.get("Start Date"));
+        this.managerApplicationDetailPage.setEndDate(data.get("End Date"));
+        this.managerApplicationDetailPage.setPayDay(data.get("Pay Day"));
+        this.managerApplicationDetailPage.setInterest(data.get("Interest"));
+    }
+
+    @When("manager clicks on Submit Judgement button")
+    public void manager_clicks_on_submit_judgement_button() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) this.testContext.getTestBase().getDriver();
+        js.executeScript("window.scrollBy(0, 1000)");
+        Thread.sleep(500);
+        this.managerApplicationDetailPage.submitJudgement();
+    }
+
+    @Then("submit success message pops up")
+    public void submit_success_message_pops_up() {
+        Assert.assertEquals(this.managerApplicationDetailPage.getToastMessage(), "Approval amount created.");
+    }
+
+    @Then("judgement information is updated with data")
+    public void judgement_information_is_updated_with_data(Map<String, String> data) throws InterruptedException {
+        String judgementAmount = data.get("Judgement Amount");
+        String startDate = data.get("Start Date");
+        String endDate = data.get("End Date");
+        String payDay = data.get("Pay Day");
+        String interest = data.get("Interest");
+        Assert.assertTrue(this.managerApplicationDetailPage.getJudgementAmount().contains(judgementAmount));
+        Assert.assertTrue(this.managerApplicationDetailPage.getStartDate().contains(startDate));
+        Assert.assertTrue(this.managerApplicationDetailPage.getEndDate().contains(endDate));
+        Assert.assertTrue(this.managerApplicationDetailPage.getPayDay().contains(payDay));
+        Assert.assertTrue(this.managerApplicationDetailPage.getInterest().contains(interest));
+    }
+
+    @When("manager clicks on Update button")
+    public void manager_clicks_on_update_button() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) this.testContext.getTestBase().getDriver();
+        js.executeScript("window.scrollBy(0, 1000)");
+        Thread.sleep(500);
+        this.managerApplicationDetailPage.updateJudgement();
     }
 
 }
