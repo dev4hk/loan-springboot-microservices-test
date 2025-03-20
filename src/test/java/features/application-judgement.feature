@@ -1,4 +1,4 @@
-@ApplicationDetail
+@Judgement
 Feature:
 
   Background:
@@ -47,3 +47,11 @@ Feature:
       | End Date         | 2026-03-20 |
       | Pay Day          | 25         |
       | Interest         | 15         |
+
+    Scenario: Grant approval amount
+      Given manager is on application page
+      When manager clicks on details button of application by customer with email "aaaa@aaaa.aaaa"
+      And manager is routed to application detail page by customer with email "aaaa@aaaa.aaaa"
+      And manager clicks on Grant Approval Amount button
+      Then approval amount granted message pops up
+      And approval amount of "$5,000.00" is fixed

@@ -26,3 +26,6 @@ Feature: Application
     And application information is displayed with data
       | 1234567890 |
       | 5000.00    |
+
+
+

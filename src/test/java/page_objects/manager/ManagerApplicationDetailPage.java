@@ -52,6 +52,12 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
     @FindBy(id = "interest")
     WebElement interest;
 
+    @FindBy(id = "grant")
+    WebElement grantButton;
+
+    @FindBy(id = "approvalAmount")
+    WebElement approvalAmount;
+
     public ManagerApplicationDetailPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
@@ -112,5 +118,13 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
 
     public void updateJudgement() {
         this.updateButton.click();
+    }
+
+    public void grantAmount() {
+        this.grantButton.click();
+    }
+
+    public String getApprovalAmount() {
+        return this.approvalAmount.getText();
     }
 }

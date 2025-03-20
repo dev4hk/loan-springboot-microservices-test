@@ -168,4 +168,22 @@ public class ApplicationStepDefinitions {
         this.managerApplicationDetailPage.updateJudgement();
     }
 
+    @When("manager clicks on Grant Approval Amount button")
+    public void manager_clicks_on_grant_approval_amount_button() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) this.testContext.getTestBase().getDriver();
+        js.executeScript("window.scrollBy(0, 1000)");
+        Thread.sleep(500);
+        this.managerApplicationDetailPage.grantAmount();
+    }
+
+    @Then("approval amount granted message pops up")
+    public void approval_amount_granted_message_pops_up() {
+        Assert.assertEquals(this.managerApplicationDetailPage.getToastMessage(), "Approval amount has been granted.");
+    }
+
+    @Then("approval amount of {string} is fixed")
+    public void approval_amount_is_fixed(String amount) {
+        Assert.assertTrue(this.managerApplicationDetailPage.getApprovalAmount().toLowerCase().contains(amount.toLowerCase()));
+    }
+
 }
