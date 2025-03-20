@@ -1,3 +1,4 @@
+@Terms
 Feature: Terms Management
 
   Background:
@@ -17,7 +18,6 @@ Feature: Terms Management
       | term2 | detail2 |
       | term3 | detail3 |
 
-  @UpdateTerms
   Scenario: update term
     Given manager is on terms page
     When manager clicks on update button of name "term1"
@@ -26,7 +26,6 @@ Feature: Terms Management
     Then successful update message pops up
     Then term name "updated name" is displayed in table
 
-  @DeleteTerms
   Scenario: delete term
     Given manager is on terms page
     When manager deletes term "updated name"

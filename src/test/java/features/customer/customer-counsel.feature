@@ -1,10 +1,10 @@
-Feature: Counsel
+@CustomerCounsel
+Feature: Customer Counsel
   Background:
     Given user is on login page
     When customer types customer credentials and click on sign in button
     Then customer is routed to customer summary page
 
-  @FormSubmission
   Scenario: Customer submit counsel
     Given customer is on counsel page
     When customer types counsel information
@@ -29,10 +29,10 @@ Feature: Counsel
     Then counsel FAQ answer is displayed
 
 
-    Scenario: Customer updates counsel form
-      Given customer is on counsel page
-      When customer clicks update button
-      And customer updates memo as "updated memo"
-      And customer clicks on Submit button
-      And customer clicks to open memo
-      Then counsel memo is updated as "updated memo"
+  Scenario: Customer updates counsel form
+    Given customer is on counsel page
+    When customer clicks update button
+    And customer updates memo as "updated memo"
+    And customer clicks on counsel Submit button
+    And customer clicks to open memo
+    Then counsel memo is updated as "updated memo"

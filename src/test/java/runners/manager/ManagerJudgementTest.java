@@ -1,4 +1,4 @@
-package runners;
+package runners.manager;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -9,5 +9,5 @@ import io.cucumber.testng.CucumberOptions;
         monochrome = true,
         tags = "@Judgement"
 )
-public class TestNGRunner extends AbstractTestNGCucumberTests {
+public class ManagerJudgementTest extends AbstractTestNGCucumberTests {
 }
