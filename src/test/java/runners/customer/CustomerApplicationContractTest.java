@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features",
         glue = "step_definitions",
         monochrome = true,
-        tags = "@Application and @Customer and not @Contract"
+        tags = "@Contract"
 )
-public class CustomerApplicationSubmissionTest extends AbstractTestNGCucumberTests {
+public class CustomerApplicationContractTest extends AbstractTestNGCucumberTests {
 }

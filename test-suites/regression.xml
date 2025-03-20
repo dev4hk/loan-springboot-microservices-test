@@ -25,4 +25,9 @@
             <class name="runners.manager.ManagerJudgementTest"/>
         </classes>
     </test>
+    <test name="Customer Application Contract">
+        <classes>
+            <class name="runners.customer.CustomerApplicationContractTest"/>
+        </classes>
+    </test>
 </suite>

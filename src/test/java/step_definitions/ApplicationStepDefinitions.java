@@ -12,6 +12,8 @@ import page_objects.manager.ManagerApplicationPage;
 import page_objects.manager.ManagerSummaryPage;
 import utils.TestContext;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -186,4 +188,20 @@ public class ApplicationStepDefinitions {
         Assert.assertTrue(this.managerApplicationDetailPage.getApprovalAmount().toLowerCase().contains(amount.toLowerCase()));
     }
 
+
+    @When("customer clicks on Click to Contract button")
+    public void customerClicksOnClickToContractButton() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) this.testContext.getTestBase().getDriver();
+        js.executeScript("window.scrollBy(0, 1000)");
+        Thread.sleep(500);
+        this.customerApplicationPage.contract();
+    }
+
+    @Then("loan application is contracted")
+    public void loanApplicationIsContracted() {
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formatted = today.format(formatter);
+        Assert.assertTrue(this.customerApplicationPage.getContractedAt().contains(formatted));
+    }
 }

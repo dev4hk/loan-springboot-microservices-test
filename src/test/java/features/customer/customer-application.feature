@@ -27,5 +27,11 @@ Feature: Application
       | 1234567890 |
       | 5000.00    |
 
+    @Contract
+    Scenario: Customer makes contract
+      Given customer is on application page
+      When customer clicks on Click to Contract button
+      Then loan application is contracted
+
 
 

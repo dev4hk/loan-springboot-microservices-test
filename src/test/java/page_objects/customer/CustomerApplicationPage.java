@@ -44,6 +44,11 @@ public class CustomerApplicationPage extends BasePageComponent {
     @FindBy(css = ".mat-mdc-dialog-content.mdc-dialog__content")
     WebElement agreeForm;
 
+    @FindBy(id = "contractBtn")
+    WebElement contractButton;
+
+    @FindBy(id = "contractedAt")
+    WebElement contractedAt;
 
     public CustomerApplicationPage(WebDriver driver) {
         super(driver);
@@ -96,5 +101,13 @@ public class CustomerApplicationPage extends BasePageComponent {
 
     public void submitApplication() {
         this.submitApplicationButton.click();
+    }
+
+    public void contract() {
+        this.contractButton.click();
+    }
+
+    public String getContractedAt() {
+        return this.contractedAt.getText();
     }
 }
