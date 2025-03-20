@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import page_objects.customer.CustomerCounselPage;
 import page_objects.customer.CustomerSummaryPage;
+import page_objects.manager.ManagerCounselDetailPage;
+import page_objects.manager.ManagerCounselPage;
+import page_objects.manager.ManagerSummaryPage;
 import utils.TestContext;
 
 import java.util.List;
@@ -15,6 +19,10 @@ public class CounselStepDefinitions {
     TestContext testContext;
     CustomerSummaryPage customerSummaryPage;
     CustomerCounselPage customerCounselPage;
+    ManagerSummaryPage managerSummaryPage;
+    ManagerCounselPage managerCounselPage;
+    ManagerCounselDetailPage managerCounselDetailPage;
+
 
     public CounselStepDefinitions(TestContext testContext) {
         this.testContext = testContext;
@@ -85,5 +93,33 @@ public class CounselStepDefinitions {
     @Then("counsel memo is updated as {string}")
     public void counsel_memo_is_update_as(String memo) {
         Assert.assertEquals(this.customerCounselPage.getMemo(), memo);
+    }
+
+    @Given("manager is on counsel page")
+    public void manager_is_on_counsel_page() {
+        this.managerSummaryPage = this.testContext.getPageObjectManager().getManagerSummaryPage();
+        this.managerSummaryPage.goToCustomerCounsel();
+        this.managerCounselPage = this.testContext.getPageObjectManager().getManagerCounselPage();
+    }
+
+    @And("manager clicks on open details button of counsel request by user with email {string}")
+    public void managerClicksOnOpenDetailsButton(String email) {
+        this.managerCounselPage.goToCounselDetailPage(email);
+        this.managerCounselDetailPage = this.testContext.getPageObjectManager().getManagerCounselDetailPage();
+    }
+
+    @Then("counsel request detail by user with email {string} is displayed")
+    public void counselRequestDetailByUserWithEmailIsDisplayed(String email) {
+        Assert.assertTrue(this.managerCounselDetailPage.getEmail().contains(email));
+    }
+
+    @And("manager clicks on Mark as Complete button")
+    public void managerClicksOnMarkAsCompleteButton() {
+        this.managerCounselDetailPage.markAsComplete();
+    }
+
+    @Then("request is marked as Complete")
+    public void requestIsMarkedAsComplete() {
+        Assert.assertTrue(this.managerCounselDetailPage.isCompleted());
     }
 }

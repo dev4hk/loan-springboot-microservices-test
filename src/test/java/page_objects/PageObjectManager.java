@@ -5,10 +5,7 @@ import page_objects.authentication.LoginPage;
 import page_objects.authentication.RegisterPage;
 import page_objects.customer.*;
 import page_objects.customer.CustomerApplicationPage;
-import page_objects.manager.ManagerApplicationDetailPage;
-import page_objects.manager.ManagerApplicationPage;
-import page_objects.manager.ManagerSummaryPage;
-import page_objects.manager.ManagerTermsPage;
+import page_objects.manager.*;
 
 public class PageObjectManager {
     private WebDriver driver;
@@ -22,6 +19,8 @@ public class PageObjectManager {
     private ManagerTermsPage managerTermsPage;
     private ManagerApplicationPage managerApplicationPage;
     private ManagerApplicationDetailPage managerApplicationDetailPage;
+    private ManagerCounselPage managerCounselPage;
+    private ManagerCounselDetailPage managerCounselDetailPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -95,5 +94,19 @@ public class PageObjectManager {
             this.managerApplicationDetailPage = new ManagerApplicationDetailPage(this.driver);
         }
         return this.managerApplicationDetailPage;
+    }
+
+    public ManagerCounselPage getManagerCounselPage() {
+        if(this.managerCounselPage == null) {
+            this.managerCounselPage = new ManagerCounselPage(this.driver);
+        }
+        return this.managerCounselPage;
+    }
+
+    public ManagerCounselDetailPage getManagerCounselDetailPage() {
+        if(this.managerCounselDetailPage == null) {
+            this.managerCounselDetailPage = new ManagerCounselDetailPage(this.driver);
+        }
+        return this.managerCounselDetailPage;
     }
 }
