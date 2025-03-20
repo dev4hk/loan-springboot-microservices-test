@@ -73,6 +73,7 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
     }
 
     public boolean isApplicationBy(String email) {
+        this.wait.until(ExpectedConditions.visibilityOf(emailElement));
         return this.emailElement.getText().toLowerCase().contains(email.toLowerCase());
     }
 

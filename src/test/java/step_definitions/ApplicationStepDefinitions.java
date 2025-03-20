@@ -218,7 +218,7 @@ public class ApplicationStepDefinitions {
     }
 
     @Then("entry amount of {string} is displayed")
-    public void entryAmountIsDisplayed(String amount) {
+    public void entryAmountIsDisplayed(String amount) throws InterruptedException {
         Assert.assertTrue(this.managerApplicationDetailPage.getEntryAmount().contains(amount));
     }
 }

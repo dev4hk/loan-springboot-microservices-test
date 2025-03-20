@@ -1,4 +1,4 @@
-package runners.manager;
+package runners.customer;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features",
         glue = "step_definitions",
         monochrome = true,
-        tags = "@Manager and @Application and @EntrySubmission"
+        tags = "@Customer and @Repayment"
 )
-public class ManagerEntryTest extends AbstractTestNGCucumberTests {
+public class CustomerRepaymentTest extends AbstractTestNGCucumberTests {
 }
