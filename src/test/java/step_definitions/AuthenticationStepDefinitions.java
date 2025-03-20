@@ -75,7 +75,8 @@ public class AuthenticationStepDefinitions {
     }
 
     @Then("customer is routed to customer summary page")
-    public void customer_is_routed_to_customer_summary_page() {
+    public void customer_is_routed_to_customer_summary_page() throws InterruptedException {
+        Thread.sleep(500);
         Assert.assertEquals(this.customerSummaryPage.getUrl(), this.testContext.getTestBase().getRootUrl());
     }
 
