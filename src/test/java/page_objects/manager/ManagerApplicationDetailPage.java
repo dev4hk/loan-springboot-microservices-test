@@ -58,6 +58,15 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
     @FindBy(id = "approvalAmount")
     WebElement approvalAmount;
 
+    @FindBy(id = "entryInput")
+    WebElement entryInput;
+
+    @FindBy(id = "entryBtn")
+    WebElement entryButton;
+
+    @FindBy(id = "entryAmount")
+    WebElement entryAmount;
+
     public ManagerApplicationDetailPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
@@ -127,4 +136,18 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
     public String getApprovalAmount() {
         return this.approvalAmount.getText();
     }
+
+    public void setEntryInput(String entry) {
+        this.entryInput.sendKeys(entry);
+    }
+
+    public void submitEntry() {
+        this.entryButton.click();
+    }
+
+    public String getEntryAmount() {
+        this.wait.until(ExpectedConditions.visibilityOf(this.entryAmount));
+        return this.entryAmount.getText();
+    }
+
 }

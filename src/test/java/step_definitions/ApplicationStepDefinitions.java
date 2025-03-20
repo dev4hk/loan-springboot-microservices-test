@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -203,5 +204,21 @@ public class ApplicationStepDefinitions {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formatted = today.format(formatter);
         Assert.assertTrue(this.customerApplicationPage.getContractedAt().contains(formatted));
+    }
+
+
+    @When("manager type entry amount {string}")
+    public void managerTypeEntryAmount(String amount) {
+        this.managerApplicationDetailPage.setEntryInput(amount);
+    }
+
+    @And("manager clicks on Payout button")
+    public void managerClicksOnPayoutButton() {
+        this.managerApplicationDetailPage.submitEntry();
+    }
+
+    @Then("entry amount of {string} is displayed")
+    public void entryAmountIsDisplayed(String amount) {
+        Assert.assertTrue(this.managerApplicationDetailPage.getEntryAmount().contains(amount));
     }
 }

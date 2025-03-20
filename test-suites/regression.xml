@@ -20,6 +20,11 @@
             <class name="runners.customer.CustomerApplicationSubmissionTest"/>
         </classes>
     </test>
+    <test name="Manager Application">
+        <classes>
+            <class name="runners.manager.ManagerApplicationTest"/>
+        </classes>
+    </test>
     <test name="Manager Application Judgement">
         <classes>
             <class name="runners.manager.ManagerJudgementTest"/>
@@ -28,6 +33,11 @@
     <test name="Customer Application Contract">
         <classes>
             <class name="runners.customer.CustomerApplicationContractTest"/>
+        </classes>
+    </test>
+    <test name="Manager Entry">
+        <classes>
+            <class name="runners.manager.ManagerEntryTest"/>
         </classes>
     </test>
 </suite>

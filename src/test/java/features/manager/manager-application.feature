@@ -19,3 +19,12 @@ Feature: Application
     Given manager is on application page
     When manager clicks on details button of application by customer with email "aaaa@aaaa.aaaa"
     Then manager is routed to application detail page by customer with email "aaaa@aaaa.aaaa"
+
+    @EntrySubmission
+  Scenario: Manager submit entry
+    Given manager is on application page
+    When manager clicks on details button of application by customer with email "aaaa@aaaa.aaaa"
+    Then manager is routed to application detail page by customer with email "aaaa@aaaa.aaaa"
+    When manager type entry amount "5000"
+    And manager clicks on Payout button
+    Then entry amount of "$5,000,00" is displayed
