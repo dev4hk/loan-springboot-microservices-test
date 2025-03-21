@@ -147,7 +147,8 @@ public class ManagerApplicationDetailPage extends BasePageComponent {
     }
 
     public String getEntryAmount() {
-        this.wait.until(ExpectedConditions.visibilityOf(this.entryAmount));
+        String initialText = this.entryAmount.getText();
+        this.wait.until(driver -> !this.entryAmount.getText().equals(initialText));
         return this.entryAmount.getText();
     }
 
