@@ -10,9 +10,9 @@ import page_objects.customer.CustomerSummaryPage;
 import utils.TestContext;
 
 public class RepaymentStepDefinitions {
-    TestContext testContext;
-    CustomerSummaryPage customerSummaryPage;
-    CustomerRepaymentPage customerRepaymentPage;
+    private TestContext testContext;
+    private CustomerSummaryPage customerSummaryPage;
+    private CustomerRepaymentPage customerRepaymentPage;
 
     public RepaymentStepDefinitions(TestContext testContext) {
         this.testContext = testContext;

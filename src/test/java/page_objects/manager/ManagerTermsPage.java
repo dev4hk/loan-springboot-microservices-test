@@ -13,25 +13,25 @@ import java.util.List;
 public class ManagerTermsPage extends BasePageComponent {
 
     @FindBy(css = ".create-link.cursor-pointer")
-    WebElement toggleForm;
+    private WebElement toggleForm;
 
     @FindBy(id = "name")
-    WebElement nameInput;
+    private WebElement nameInput;
 
     @FindBy(id = "termsDetail")
-    WebElement termsDetailInput;
+    private WebElement termsDetailInput;
 
     @FindBy(css = "button[type='submit']")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(tagName = "form")
-    WebElement form;
+    private WebElement form;
 
     @FindBy(css = ".mat-mdc-snack-bar-label.mdc-snackbar__label")
-    WebElement toast;
+    private WebElement toast;
 
     @FindBy(css = "table tbody tr")
-    List<WebElement> tableData;
+    private List<WebElement> tableData;
 
     public ManagerTermsPage(WebDriver driver) {
         super(driver);

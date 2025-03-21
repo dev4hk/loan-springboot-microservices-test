@@ -9,7 +9,7 @@ import page_objects.BasePageComponent;
 public class ManagerSummaryPage extends BasePageComponent {
 
     @FindBy(id = "applicationCount")
-    WebElement applicationCount;
+    private WebElement applicationCount;
 
     public ManagerSummaryPage(WebDriver driver) {
         super(driver);

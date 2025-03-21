@@ -12,12 +12,12 @@ import java.util.List;
 public class ManagerApplicationPage extends BasePageComponent {
 
     @FindBy(tagName = "table")
-    WebElement table;
+    private WebElement table;
 
     @FindBy(css = "table tbody tr")
-    List<WebElement> rows;
+    private List<WebElement> rows;
 
-    By byEmailCell = By.cssSelector("td:nth-of-type(4)");
+    private By byEmailCell = By.cssSelector("td:nth-of-type(4)");
 
     public ManagerApplicationPage(WebDriver driver) {
         super(driver);

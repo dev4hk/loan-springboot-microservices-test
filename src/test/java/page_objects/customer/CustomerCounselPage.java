@@ -9,46 +9,46 @@ import page_objects.BasePageComponent;
 public class CustomerCounselPage extends BasePageComponent {
 
     @FindBy(id = "cellPhone")
-    WebElement cellPhoneInput;
+    private WebElement cellPhoneInput;
 
     @FindBy(id = "address1")
-    WebElement address1Input;
+    private WebElement address1Input;
 
     @FindBy(id = "address2")
-    WebElement address2Input;
+    private WebElement address2Input;
 
     @FindBy(id = "city")
-    WebElement cityInput;
+    private WebElement cityInput;
 
     @FindBy(id = "state")
-    WebElement stateInput;
+    private WebElement stateInput;
 
     @FindBy(id = "zipCode")
-    WebElement zipcodeInput;
+    private WebElement zipcodeInput;
 
     @FindBy(id = "memo")
-    WebElement memoInput;
+    private WebElement memoInput;
 
     @FindBy(xpath = "//button[normalize-space()=\"Submit\"]")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(xpath = "//span[normalize-space()=\"Loan Counsel Details\"]")
-    WebElement counselCardHeader;
+    private WebElement counselCardHeader;
 
     @FindBy(css = ".memo-button")
-    WebElement memoButton;
+    private WebElement memoButton;
 
     @FindBy(css = ".memo-detail.open")
-    WebElement memo;
+    private WebElement memo;
 
     @FindBy(css = ".faq-question")
-    WebElement faqQuestionButton;
+    private WebElement faqQuestionButton;
 
     @FindBy(css = ".faq-answer.open")
-    WebElement faqAnswer;
+    private WebElement faqAnswer;
 
     @FindBy(xpath = "//button[normalize-space()=\"Update\"]")
-    WebElement updateButton;
+    private WebElement updateButton;
 
     public CustomerCounselPage(WebDriver driver) {
         super(driver);

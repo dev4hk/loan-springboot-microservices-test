@@ -16,12 +16,12 @@ import utils.TestContext;
 import java.util.List;
 
 public class CounselStepDefinitions {
-    TestContext testContext;
-    CustomerSummaryPage customerSummaryPage;
-    CustomerCounselPage customerCounselPage;
-    ManagerSummaryPage managerSummaryPage;
-    ManagerCounselPage managerCounselPage;
-    ManagerCounselDetailPage managerCounselDetailPage;
+    private TestContext testContext;
+    private CustomerSummaryPage customerSummaryPage;
+    private CustomerCounselPage customerCounselPage;
+    private ManagerSummaryPage managerSummaryPage;
+    private ManagerCounselPage managerCounselPage;
+    private ManagerCounselDetailPage managerCounselDetailPage;
 
 
     public CounselStepDefinitions(TestContext testContext) {

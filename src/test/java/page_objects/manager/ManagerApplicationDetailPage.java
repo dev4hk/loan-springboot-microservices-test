@@ -11,61 +11,61 @@ import page_objects.BasePageComponent;
 public class ManagerApplicationDetailPage extends BasePageComponent {
 
     @FindBy(id = "email")
-    WebElement emailElement;
+    private WebElement emailElement;
 
     @FindBy(id = "judgementAmountInput")
-    WebElement judgementAmountInput;
+    private WebElement judgementAmountInput;
 
     @FindBy(id = "startDateInput")
-    WebElement startDateInput;
+    private WebElement startDateInput;
 
     @FindBy(id = "endDateInput")
-    WebElement endDateInput;
+    private WebElement endDateInput;
 
     @FindBy(id = "payDayInput")
-    WebElement payDayInput;
+    private WebElement payDayInput;
 
     @FindBy(id = "interestInput")
-    WebElement interestInput;
+    private WebElement interestInput;
 
     @FindBy(xpath = "//button[normalize-space()=\"Submit Judgment\"]")
-    WebElement submitJudgementButton;
+    private WebElement submitJudgementButton;
 
     @FindBy(xpath = "//button[normalize-space()=\"Update\"]")
-    WebElement updateButton;
+    private WebElement updateButton;
 
     @FindBy(css = ".mat-mdc-snack-bar-label.mdc-snackbar__label")
-    WebElement toast;
+    private WebElement toast;
 
     @FindBy(id = "judgementAmount")
-    WebElement judgementAmount;
+    private WebElement judgementAmount;
 
     @FindBy(id = "startDate")
-    WebElement startDate;
+    private WebElement startDate;
 
     @FindBy(id = "endDate")
-    WebElement endDate;
+    private WebElement endDate;
 
     @FindBy(id = "payDay")
-    WebElement payDay;
+    private WebElement payDay;
 
     @FindBy(id = "interest")
-    WebElement interest;
+    private WebElement interest;
 
     @FindBy(id = "grant")
-    WebElement grantButton;
+    private WebElement grantButton;
 
     @FindBy(id = "approvalAmount")
-    WebElement approvalAmount;
+    private WebElement approvalAmount;
 
     @FindBy(id = "entryInput")
-    WebElement entryInput;
+    private WebElement entryInput;
 
     @FindBy(id = "entryBtn")
-    WebElement entryButton;
+    private WebElement entryButton;
 
     @FindBy(id = "entryAmount")
-    WebElement entryAmount;
+    private WebElement entryAmount;
 
     public ManagerApplicationDetailPage(WebDriver driver) {
         super(driver);

@@ -20,12 +20,12 @@ import java.util.Map;
 
 public class ApplicationStepDefinitions {
 
-    TestContext testContext;
-    CustomerSummaryPage customerSummaryPage;
-    CustomerApplicationPage customerApplicationPage;
-    ManagerSummaryPage managerSummaryPage;
-    ManagerApplicationPage managerApplicationPage;
-    ManagerApplicationDetailPage managerApplicationDetailPage;
+    private TestContext testContext;
+    private CustomerSummaryPage customerSummaryPage;
+    private CustomerApplicationPage customerApplicationPage;
+    private ManagerSummaryPage managerSummaryPage;
+    private ManagerApplicationPage managerApplicationPage;
+    private ManagerApplicationDetailPage managerApplicationDetailPage;
 
     public ApplicationStepDefinitions(TestContext testContext) {
         this.testContext = testContext;

@@ -9,9 +9,9 @@ import page_objects.manager.ManagerTermsPage;
 import utils.TestContext;
 
 public class TermsStepDefinitions {
-    TestContext testContext;
-    ManagerSummaryPage managerSummaryPage;
-    ManagerTermsPage managerTermsPage;
+    private TestContext testContext;
+    private ManagerSummaryPage managerSummaryPage;
+    private ManagerTermsPage managerTermsPage;
 
     public TermsStepDefinitions(TestContext testContext) {
         this.testContext = testContext;

@@ -13,19 +13,19 @@ import java.util.List;
 public class CustomerRepaymentPage extends BasePageComponent {
 
     @FindBy(id = "monthlyPayment")
-    WebElement monthlyPayment;
+    private WebElement monthlyPayment;
 
     @FindBy(id = "paymentInput")
-    WebElement paymentInput;
+    private WebElement paymentInput;
 
     @FindBy(id = "paymentSubmit")
-    WebElement paymentSubmit;
+    private WebElement paymentSubmit;
 
     @FindBy(css = ".mat-mdc-snack-bar-label.mdc-snackbar__label")
-    WebElement toast;
+    private WebElement toast;
 
     @FindBy(css = ".card-body ul li")
-    List<WebElement> historyItems;
+    private List<WebElement> historyItems;
 
     public CustomerRepaymentPage(WebDriver driver) {
         super(driver);

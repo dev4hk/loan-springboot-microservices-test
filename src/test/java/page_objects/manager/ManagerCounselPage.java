@@ -12,10 +12,10 @@ import java.util.List;
 public class ManagerCounselPage extends BasePageComponent {
 
     @FindBy(css = "table tbody tr")
-    List<WebElement> rows;
+    private List<WebElement> rows;
 
-    By emailCell = By.cssSelector("td:nth-child(4)");
-    By viewDetailsButton = By.cssSelector(".view-details-link");
+    private By emailCell = By.cssSelector("td:nth-child(4)");
+    private By viewDetailsButton = By.cssSelector(".view-details-link");
 
     public ManagerCounselPage(WebDriver driver) {
         super(driver);

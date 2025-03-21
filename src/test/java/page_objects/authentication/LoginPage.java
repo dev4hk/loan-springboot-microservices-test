@@ -9,22 +9,22 @@ import page_objects.BasePageComponent;
 public class LoginPage extends BasePageComponent {
 
     @FindBy(id = "kc-header-wrapper")
-    WebElement pageTitle;
+    private WebElement pageTitle;
 
     @FindBy(id = "kc-page-title")
-    WebElement formTitle;
+    private WebElement formTitle;
 
     @FindBy(id = "username")
-    WebElement usernameInput;
+    private WebElement usernameInput;
 
     @FindBy(id = "password")
-    WebElement passwordInput;
+    private WebElement passwordInput;
 
     @FindBy(id = "kc-login")
-    WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(linkText = "Register")
-    WebElement registerLink;
+    private WebElement registerLink;
 
     public LoginPage(WebDriver driver) {
         super(driver);

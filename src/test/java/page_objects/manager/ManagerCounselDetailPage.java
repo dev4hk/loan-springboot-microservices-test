@@ -9,13 +9,13 @@ import page_objects.BasePageComponent;
 public class ManagerCounselDetailPage extends BasePageComponent {
 
     @FindBy(css = ".btn.btn-custom-inverse")
-    WebElement markAsCompleteButton;
+    private WebElement markAsCompleteButton;
 
     @FindBy(xpath = "//span[normalize-space()=\"Completed\"]")
-    WebElement completedMark;
+    private WebElement completedMark;
 
     @FindBy(id = "email")
-    WebElement email;
+    private WebElement email;
 
     public ManagerCounselDetailPage(WebDriver driver) {
         super(driver);

@@ -12,43 +12,43 @@ import java.util.List;
 public class CustomerApplicationPage extends BasePageComponent {
 
     @FindBy(tagName = "form")
-    WebElement form;
+    private WebElement form;
 
     @FindBy(id = "cellPhone")
-    WebElement cellPhoneInput;
+    private WebElement cellPhoneInput;
 
     @FindBy(id = "hopeAmount")
-    WebElement hopeAmountInput;
+    private WebElement hopeAmountInput;
 
     @FindBy(xpath = "//button[normalize-space()='Submit Application']")
-    WebElement submitApplicationButton;
+    private WebElement submitApplicationButton;
 
     @FindBy(css = "input[type='checkbox']")
-    List<WebElement> checkBoxes;
+    private List<WebElement> checkBoxes;
 
     @FindBy(xpath = "//button[normalize-space()='Agree & Submit']")
-    WebElement agreeAndSubmitButton;
+    private WebElement agreeAndSubmitButton;
 
     @FindBy(css = ".mat-mdc-snack-bar-label.mdc-snackbar__label")
-    WebElement toast;
+    private WebElement toast;
 
     @FindBy(xpath = "//div[normalize-space()=\"Loan Application Details\"]")
-    WebElement applicationDataHeaderTitle;
+    private WebElement applicationDataHeaderTitle;
 
     @FindBy(css = ".faq-question")
-    WebElement faqQuestionButton;
+    private WebElement faqQuestionButton;
 
     @FindBy(css = ".faq-answer.open")
-    WebElement faqAnswer;
+    private WebElement faqAnswer;
 
     @FindBy(css = ".mat-mdc-dialog-content.mdc-dialog__content")
-    WebElement agreeForm;
+    private WebElement agreeForm;
 
     @FindBy(id = "contractBtn")
-    WebElement contractButton;
+    private WebElement contractButton;
 
     @FindBy(id = "contractedAt")
-    WebElement contractedAt;
+    private WebElement contractedAt;
 
     public CustomerApplicationPage(WebDriver driver) {
         super(driver);

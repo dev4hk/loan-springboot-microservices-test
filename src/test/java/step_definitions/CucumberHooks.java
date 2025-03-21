@@ -10,7 +10,7 @@ import utils.TestContext;
 
 public class CucumberHooks {
 
-    TestContext testContext;
+    private TestContext testContext;
 
     public CucumberHooks(TestContext testContext) {
         this.testContext = testContext;

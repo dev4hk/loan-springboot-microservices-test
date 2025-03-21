@@ -12,10 +12,10 @@ import utils.TestContext;
 
 public class AuthenticationStepDefinitions {
 
-    TestContext testContext;
-    LoginPage loginPage;
-    RegisterPage registerPage;
-    CustomerSummaryPage customerSummaryPage;
+    private TestContext testContext;
+    private LoginPage loginPage;
+    private RegisterPage registerPage;
+    private CustomerSummaryPage customerSummaryPage;
 
     ManagerSummaryPage managerSummaryPage;
 

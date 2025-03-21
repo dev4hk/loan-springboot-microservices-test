@@ -9,34 +9,34 @@ import page_objects.BasePageComponent;
 public class RegisterPage extends BasePageComponent {
 
     @FindBy(id = "kc-header-wrapper")
-    WebElement pageTitle;
+    private WebElement pageTitle;
 
     @FindBy(id = "kc-page-title")
-    WebElement formTitle;
+    private WebElement formTitle;
 
     @FindBy(id = "username")
-    WebElement usernameInput;
+    private WebElement usernameInput;
 
     @FindBy(id = "password")
-    WebElement passwordInput;
+    private WebElement passwordInput;
 
     @FindBy(id = "password-confirm")
-    WebElement passwordConfirmInput;
+    private WebElement passwordConfirmInput;
 
     @FindBy(id = "email")
-    WebElement emailInput;
+    private WebElement emailInput;
 
     @FindBy(id = "firstName")
-    WebElement firstNameInput;
+    private WebElement firstNameInput;
 
     @FindBy(id = "lastName")
-    WebElement lastNameInput;
+    private WebElement lastNameInput;
 
     @FindBy(id = "kc-form-buttons")
-    WebElement registerButton;
+    private WebElement registerButton;
 
     @FindBy(partialLinkText = "Back to Login")
-    WebElement backToLoginLink;
+    private WebElement backToLoginLink;
 
     public RegisterPage(WebDriver driver) {
         super(driver);
