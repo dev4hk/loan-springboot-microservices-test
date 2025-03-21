@@ -27,15 +27,15 @@ Here are the core classes and their roles:
     - Manages test context, including credentials and page object management.
     - have associations with TestBase and PageObjectManager.
   
-- ### **BasePageComponent**
+### **BasePageComponent**
 - A base class for all page objects.
 - Contains navigation methods.
 
-- ### **Page Objects(e.g. ManagerSummaryPage, ManagerCounselPage, etc)**
+### **Page Objects(e.g. ManagerSummaryPage, ManagerCounselPage, etc)**
 - Inherits BasePageComponent.
 - Represents each page with specific functionalities
 
-- ### **Step Definition Objects(e.g. AuthenticationStepDefinitions, ApplicationStepDefinitions, etc)**
+### **Step Definition Objects(e.g. AuthenticationStepDefinitions, ApplicationStepDefinitions, etc)**
 - Defines Cucumber step definitions.
 - Uses TestContext to interact with pages.
 
