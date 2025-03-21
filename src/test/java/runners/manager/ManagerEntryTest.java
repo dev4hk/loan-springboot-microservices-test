@@ -7,7 +7,11 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features",
         glue = "step_definitions",
         monochrome = true,
-        tags = "@Manager and @Application and @EntrySubmission"
+        tags = "@Manager and @Application and @EntrySubmission",
+        plugin = {
+                "html:reports/ManagerEntryTest.html",
+                "json:reports/ManagerEntryTest.json",
+        }
 )
 public class ManagerEntryTest extends AbstractTestNGCucumberTests {
 }

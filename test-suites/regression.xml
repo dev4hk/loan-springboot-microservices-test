@@ -1,45 +1,45 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Feature Execution Order" verbose="1">
-<!--    <test name="Manager Terms">-->
-<!--        <classes>-->
-<!--            <class name="runners.manager.ManagerTermsTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Customer Counsel">-->
-<!--        <classes>-->
-<!--            <class name="runners.customer.CustomerCounselTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Manager Counsel">-->
-<!--        <classes>-->
-<!--            <class name="runners.manager.ManagerCounselTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Customer Application">-->
-<!--        <classes>-->
-<!--            <class name="runners.customer.CustomerApplicationSubmissionTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Manager Application">-->
-<!--        <classes>-->
-<!--            <class name="runners.manager.ManagerApplicationTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Manager Application Judgement">-->
-<!--        <classes>-->
-<!--            <class name="runners.manager.ManagerJudgementTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Customer Application Contract">-->
-<!--        <classes>-->
-<!--            <class name="runners.customer.CustomerApplicationContractTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Manager Entry">-->
-<!--        <classes>-->
-<!--            <class name="runners.manager.ManagerEntryTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Manager Terms">
+        <classes>
+            <class name="runners.manager.ManagerTermsTest"/>
+        </classes>
+    </test>
+    <test name="Customer Counsel">
+        <classes>
+            <class name="runners.customer.CustomerCounselTest"/>
+        </classes>
+    </test>
+    <test name="Manager Counsel">
+        <classes>
+            <class name="runners.manager.ManagerCounselTest"/>
+        </classes>
+    </test>
+    <test name="Customer Application">
+        <classes>
+            <class name="runners.customer.CustomerApplicationSubmissionTest"/>
+        </classes>
+    </test>
+    <test name="Manager Application">
+        <classes>
+            <class name="runners.manager.ManagerApplicationTest"/>
+        </classes>
+    </test>
+    <test name="Manager Application Judgement">
+        <classes>
+            <class name="runners.manager.ManagerJudgementTest"/>
+        </classes>
+    </test>
+    <test name="Customer Application Contract">
+        <classes>
+            <class name="runners.customer.CustomerApplicationContractTest"/>
+        </classes>
+    </test>
+    <test name="Manager Entry">
+        <classes>
+            <class name="runners.manager.ManagerEntryTest"/>
+        </classes>
+    </test>
     <test name="Customer Repayment">
         <classes>
             <class name="runners.customer.CustomerRepaymentTest"/>

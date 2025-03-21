@@ -7,7 +7,11 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features",
         glue = "step_definitions",
         monochrome = true,
-        tags = "@ManagerCounsel"
+        tags = "@ManagerCounsel",
+        plugin = {
+                "html:reports/ManagerCounselTest.html",
+                "json:reports/ManagerCounselTest.json",
+        }
 )
 public class ManagerCounselTest extends AbstractTestNGCucumberTests {
 }
