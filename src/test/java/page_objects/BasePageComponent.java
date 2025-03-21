@@ -14,19 +14,19 @@ public class BasePageComponent {
     protected WebDriverWait wait;
 
     @FindBy(xpath = "//a[normalize-space()=\"Summary\"]")
-    WebElement customerSummaryLink;
+    private WebElement customerSummaryLink;
 
     @FindBy(xpath = "//a[normalize-space()=\"Application\"]")
-    WebElement applicationLink;
+    private WebElement applicationLink;
 
     @FindBy(xpath = "//a[normalize-space()=\"Counsel\"]")
-    WebElement counselLink;
+    private WebElement counselLink;
 
     @FindBy(xpath = "//a[normalize-space()=\"Repayment\"]")
-    WebElement repaymentLink;
+    private WebElement repaymentLink;
 
     @FindBy(xpath = "//a[normalize-space()=\"Terms\"]")
-    WebElement termsLink;
+    private WebElement termsLink;
 
     public BasePageComponent(WebDriver driver) {
         this.driver = driver;
