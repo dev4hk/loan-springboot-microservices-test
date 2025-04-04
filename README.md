@@ -1,46 +1,73 @@
-# Loan Service Testing Framework - BDD
+# ✅ Loan Service Testing Framework – BDD
 
-## Overview
-The Loan Service Testing Framework leverages Behavior-Driven Development (BDD) principles to simplify and enhance the testing process for loan-springboot-microservice. This framework integrates cutting-edge testing technologies like **Cucumber**, **Selenium**, and **TestNG**, ensuring a robust and scalable testing infrastructure.
+A test automation framework designed for the **Loan Microservices Project**, following **Behavior-Driven Development (BDD)** principles.  
+It integrates **Cucumber**, **Selenium**, and **TestNG** to create a scalable, maintainable, and readable testing suite.
 
 ---
 
-## Technologies Used
-### Cucumber
-### Selenium
-### TestNG
+## 🚀 Overview
 
+This framework simplifies the testing process of `loan-springboot-microservice` by:
 
-## Key Components
-Here are the core classes and their roles:
+- Embracing **BDD** for clear, human-readable test scenarios
+- Using **Page Object Model** for reusability and modularity
+- Supporting cross-browser testing with **Selenium WebDriver**
+- Leveraging **TestNG** for structured test execution and reporting
 
-### **PageObjectManager**
-- Manages page objects to prevent redundant instantiations.
-- Returns instances of different page objects on demand.
+---
 
-### **TestBase**
-- Handles WebDriver initialization and configuration.
-- Provides browser control.
+## 🧪 Technologies Used
 
-### **TestContext**
-- Acts as the central hub to:
-    - Manages test context, including credentials and page object management.
-    - have associations with TestBase and PageObjectManager.
-  
-### **BasePageComponent**
-- A base class for all page objects.
-- Contains navigation methods.
+- 🥒 **Cucumber** – BDD syntax and Gherkin-based test scenarios
+- 🧪 **Selenium WebDriver** – Browser automation
+- 🔍 **TestNG** – Test orchestration and assertions
+- 📦 **PicoContainer** – Dependency injection for shared test context
 
-### **Page Objects(e.g. ManagerSummaryPage, ManagerCounselPage, etc)**
-- Inherits BasePageComponent.
-- Represents each page with specific functionalities
+---
 
-### **Step Definition Objects(e.g. AuthenticationStepDefinitions, ApplicationStepDefinitions, etc)**
-- Defines Cucumber step definitions.
-- Uses TestContext to interact with pages.
+## 🧱 Key Components
 
-#### Dependency Injection:
-`TestContext` is dependency-injected into step definitions using **PicoContainer**, allowing the same WebDriver and page objects to be shared across all step definitions.
+### 🔹 `PageObjectManager`
+- Manages all page object instances
+- Prevents redundant object creation
+- Provides access to page-specific objects on demand
 
-## **Framework Diagram**
+### 🔹 `TestBase`
+- Responsible for WebDriver setup and configuration
+- Provides common methods to initialize and control browsers
+
+### 🔹 `TestContext`
+- Central test context holder that:
+  - Manages credentials and session data
+  - Connects `TestBase`, `PageObjectManager`, and scenario-specific state
+- Injected into step definitions via **PicoContainer**
+
+### 🔹 `BasePageComponent`
+- Abstract base class for all page objects
+- Provides navigation and utility methods used across pages
+
+### 🔹 **Page Objects** (e.g., `ManagerSummaryPage`, `ManagerCounselPage`, etc.)
+- Represent specific pages in the loan system
+- Extend `BasePageComponent`
+- Encapsulate actions and validations for each page
+
+### 🔹 **Step Definitions** (e.g., `AuthenticationStepDefinitions`, `ApplicationStepDefinitions`, etc.)
+- Define the executable logic behind Cucumber steps
+- Use `TestContext` to interact with the web application and pages
+
+---
+
+## 🔄 Dependency Injection with PicoContainer
+
+The framework uses **PicoContainer** to inject `TestContext` into all step definition classes.  
+This allows:
+
+- Shared WebDriver across steps
+- Consistent access to page objects
+- Cleaner, more modular step definition logic
+
+---
+
+## 🧭 Framework Diagram
+
 ![UML Class Diagram](images/diagram.png)
